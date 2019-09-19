@@ -1,0 +1,44 @@
+package ru.smandroid.tmanager;
+java.util.ArrayList;
+ 
+public class Main 
+{
+    public static void main(String args[]) 
+    {
+            System.out.println("Namber?");
+			
+			int max_cycle_len = 1;
+			for (int d = 2; d < 1000; d++)
+			{
+				ArrayList r_seq = new ArrayList();
+				int r_seq_len = 0;
+				int pos;
+				int q = 10;
+				int r=0;
+				do
+				{
+					r = q % d;
+					for (pos = 0; pos < r_seq_len && r_seq[pos] != r; pos++);
+					if (pos != r_seq_len)
+					{
+						break;
+					}
+					else
+					{    
+						r_seq. vPoints.add(r);
+						r_seq_len++;
+					}
+					q = r * 10;
+				}
+				while(r);
+
+				if (r_seq_len - pos > max_cycle_len)
+				{
+					max_cycle_len = r_seq_len - pos;
+				}
+			}
+			
+            System.out.println("max_cycle_len "+ max_cycle_len );
+    }
+     
+}
