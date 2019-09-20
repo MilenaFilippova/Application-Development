@@ -1,0 +1,39 @@
+package ru.smandroid.tmanager;
+ 
+public class Main 
+{
+    public static void main(String args[]) 
+    {
+			
+		int numerator=1,denominator=1,len=0, maxlen=0,i=0, min=2, max=100;
+
+		for (i=min+1 ; i<max; i++) //вывод всех цифр после точки
+		{
+			len=mydiv(numerator,i);//i- то, на что делим
+			if(maxlen<len)
+			{
+				maxlen=len;
+				denominator=i;
+			}
+		}
+		System.out.println("MAXlen "+ maxlen +"	denominator=" +denominator);
+    }
+     
+	 
+	static int mydiv(int m,int n)
+	{
+		bool *Ost = new bool[1000];
+		int k=100,len=0;
+		for (int i = 0; i <= n; i ++) //вывод всех цифр после точки
+		{
+			m = (m % n) * 10;
+			if(Ost[m]!=1)
+			{
+				Ost[m]=1;	//новый остаток,который еще не встречали
+				len++; 
+			}
+			else
+				return len;	//нашли такой же ,значит выводим последовательность
+		}
+	}
+}
