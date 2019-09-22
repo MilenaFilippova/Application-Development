@@ -10,11 +10,11 @@ public class Main
  
 		System.out.println("Enter the winning number k to which you will play:\n");//Введите победное число k ,до которого будут играть:
 		Scanner sc=new Scanner(System.in);
-		k=sc.nextInt();;
+		k=sc.nextInt();
 		System.out.println("Enter the score of the first team: \n");	//Введите счет первой команды:
-		x=sc.nextInt();;
+		x=sc.nextInt();
 		System.out.println("Enter the score of the second team: \n");	//Введите счет второй команды:
-		y=sc.nextInt();;
+		y=sc.nextInt();
 		count = 0;
 		if (x > y) //находим команду,которая ближе к победе
 		{
