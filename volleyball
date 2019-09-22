@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String args[]) 
+    {
+		int k=0, x=0, y=0, count=0, max=0, min=0, odds=0,MINodds=2;	//играют до k очков, x-счет одной команды, y-счет другой команды,MINodds - разница в очках для победы
+		
+ 
+		System.out.println("Enter the winning number k to which you will play:\n");//Введите победное число k ,до которого будут играть:
+		Scanner sc=new Scanner(System.in);
+		k=sc.nextInt();;
+		System.out.println("Enter the score of the first team: \n");	//Введите счет первой команды:
+		x=sc.nextInt();;
+		System.out.println("Enter the score of the second team: \n");	//Введите счет второй команды:
+		y=sc.nextInt();;
+		count = 0;
+		if (x > y) //находим команду,которая ближе к победе
+		{
+			max = x;
+			min = y;
+		}
+		else 
+		{
+			max = y;
+			min = x;
+		}
+		if (k > max)	//проверяем дошла ли игра до количества очков k
+		{
+			count += k - max;
+		}
+		odds = max + count - min;
+		if (odds < MINodds)	//проверяем чтобы разрыв был в более чем 2 очка
+		{
+			count += MINodds-odds;//считаем сколько нужно до разрыва в 2 очка
+		}
+		System.out.println("The minimum number of goals that will be played before the end of the match:"+ count + "\n");	
+		//Минимальное количество мячей, которые будут разыграны до окончания матча:
+		
+	}
+}
