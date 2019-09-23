@@ -13,52 +13,50 @@ class Robot
 	
 	
 	public Robot(int x,int y,Direction dir) 
-    {
+    	{
 		this.x=x;
 		this.y=y;
 		this.dir=dir;
 	}
 	
-
-
-		public Direction getDirection() 
-		{
+	public Direction getDirection() 
+	{
 			 return this.dir; // текущее направление взгляда
-		}
+	}
 
-		public int getX() 
-		{
+	public int getX() 
+	{
 			 return x;	// текущая координата X
-		}
+	}
 
-		public int getY() 
-		{
+	public int getY() 
+	{
 			 return y;	// текущая координата Y
-		}
+	}
 
-		public void turnLeft() 
-		{
+	public void turnLeft() 
+	{
 			// повернуться на 90 градусов против часовой стрелки
-			switch(dir)
-		   {
-			  case UP:
+		switch(dir)
+		{
+		case UP:
                     System.out.println("turn left");
                     dir = Direction.LEFT;
                     break;
-				case LEFT:
+		case LEFT:
                     System.out.println("turn left");
                     dir = Direction.DOWN;
-					          break;
-				case DOWN:
+		    break;
+		case DOWN:
                     System.out.println("turn left");
                     dir = Direction.RIGHT;
                     break;
-        case RIGHT:
+        	case RIGHT:
                     System.out.println("turn left");
                     dir = Direction.UP;
                     break;
-        default:
-					          dir = Direction.LEFT;
+        	default:
+		    dir = Direction.LEFT;
                     break;
             }
 		}
