@@ -1,0 +1,38 @@
+public class MyClass
+{
+    public static void main(String args[]) 
+    {
+        int[] a = new int[] {21, 23, 24, 40};
+        int[] b = new int[] {10, 11, 41, 50, 65};
+        int[] c = new int[a.length + b.length];
+    
+        int i=0, j=0;
+        for (int k=0; k<c.length; k++) 
+        {
+            if (i > a.length-1) 
+            {
+                c[k] = b[j];  //последние эллементы
+                j++;
+            }
+            else if (j > b.length-1) 
+            {
+                c[k] = a[i];
+                i++;
+            }
+            else if (a[i] < b[j]) //какой из эллементов массива меньше;если 1 то присваиваем знач в общий массив
+            {
+                c[k] = a[i];
+                i++;
+            }
+            else        //если 2ой то присваиваем его знач в общий массив
+            {
+                c[k]=b[j];
+                j++;
+            }
+        }
+        for(int x=0;x<c.length;x++)
+        {
+            System.out.println( c[x] + " ");  //вывод полученного массива
+        }
+    }
+}
