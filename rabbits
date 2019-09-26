@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String args[]) 
+    {
+        System.out.println("Enter quantity month: \n");
+        Scanner sc=new Scanner(System.in);
+        int month=sc.nextInt();
+        System.out.println("Enter the life span: \n");
+        int life=sc.nextInt();  //сколько месяцев живут кролики
+        long[] adult=new long[10000];
+        adult[0]=0;
+        long[] middle=new long[10000];
+        middle[0]=0;
+        long[] child=new long[10000];
+        child[0]=1;
+        for(int i=1; i<month;i++)
+        {
+            middle[i]=child[i-1];
+            if (i>=life+1)
+            {
+              adult[i]=middle[i-1] + adult[i-1] - child[i-life-1];
+            }
+            else
+            {
+              adult[i]=middle[i-1] + adult[i-1];
+            }
+            child[i]=adult[i];
+            //System.out.println(" child= "+child[i]+"    middle= " +middle[i] + "   adult="+adult[i]+" \n"  );
+        }
+        System.out.println("Total rabbits "+(child[month-1]+middle[month-1]+adult[month-1]));
+    }
+}
