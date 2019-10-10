@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyFilms</string>
+    <string name="galaxy_name">Milena</string>
+    <string-array name="MyMovies">
+        <item>Inception</item>
+        <item>Zootopia</item>
+        <item>Casablanca</item>
+        <item>Raging Bull</item>
+        <item>The Godfather</item>
+        <item>Schindler's List</item>
+        <item>Star Wars 4 </item>
+        <item>The Graduate</item>
+        <item>The General</item>
+        <item>On the Waterfront</item>
+    </string-array>
+    <string name="button_rand">Choose a movie</string>
+    <string name="button_del">Discharge</string>
+</resources>
