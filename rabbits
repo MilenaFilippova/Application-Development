@@ -9,26 +9,39 @@ public class Main
         int month=sc.nextInt();
         System.out.println("Enter the life span: \n");
         int life=sc.nextInt();  //сколько месяцев живут кролики
-        long[] adult=new long[10000];
+        long[] adult=new long[10000];   //все взрослые особи
         adult[0]=0;
-        long[] middle=new long[10000];
+        long[] middle=new long[10000];  //кролики,которые не могут размножаться
         middle[0]=0;
-        long[] child=new long[10000];
-        child[0]=1;
-        for(int i=1; i<month;i++)
-        {
+        long[] child=new long[10000];   //крольчата
+        child[1]=1;
+        int flag=0;
+        long[][] everymonth = new long[10000][10000];   //количество кроликов в каждом месяце 
+        for(int i=2; i<=month;i++)
+        { 
             middle[i]=child[i-1];
-            if (i>=life+1)
+            for(int j=2; j<=i  && j<=life;j++)
             {
-              adult[i]=middle[i-1] + adult[i-1] - child[i-life-1];
-            }
-            else
-            {
-              adult[i]=middle[i-1] + adult[i-1];
-            }
-            child[i]=adult[i];
-            //System.out.println(" child= "+child[i]+"    middle= " +middle[i] + "   adult="+adult[i]+" \n"  );
+                if (flag==0)
+                {
+                    everymonth[i][j]=middle[i-1];   //количество кроликов в каждом месяце в котором начнут размножаться
+                    flag++;
+                }
+                else
+                {
+                    everymonth[i][j]=everymonth[i-1][j-1];  //количество кроликов в каждом последующем месяце 
+                }
+                adult[i]+=everymonth[i][j]; //накапливаем взрослых
+                child[i]=adult[i];
+                if(j==life)
+                {
+                    adult[i]-=everymonth[i][j];//начиная с life кролики умирают
+                }
+                
+           }
+            flag=0;
+            //System.out.println(i+ " child= "+child[i]+"    middle= " +middle[i] + "   adult="+adult[i]+" \n"  );
         }
-        System.out.println("Total rabbits "+(child[month-1]+middle[month-1]+adult[month-1]));
+        System.out.println("Total rabbits "+(child[month]+middle[month]+adult[month]));
     }
 }
