@@ -36,8 +36,6 @@
             android:layout_height="wrap_content"
             android:text="ARR"
             android:textAlignment="center"
-            tools:layout_editor_absoluteX="-75dp"
-            tools:layout_editor_absoluteY="150dp"
             />
     </LinearLayout>
 
