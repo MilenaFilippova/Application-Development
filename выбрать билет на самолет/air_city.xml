@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Air</string>
+    <string name="galaxy_name">Milena</string>
+    <string-array name="city">
+        <item>IRK</item>
+        <item>MSK</item>
+        <item>EKT</item>
+        <item>KRS</item>
+    </string-array>
+</resources>
