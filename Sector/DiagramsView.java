@@ -37,6 +37,8 @@ public class DiagramsView extends View {
         return super.onTouchEvent(event);
     }
 
+    
+    
     public boolean isPointInto(float eventX, float eventY) {
 
        // функция должна сообщать, содержится ли точка внутри сектора
@@ -46,6 +48,8 @@ public class DiagramsView extends View {
             return false;
     }
 
+    
+    
     //Метод onDraw был вызван системой, когда возникла необходимость прорисовать
     // View-компонент на экране. Это также произойдет, например, если выключить-включить экран
     @Override
@@ -56,17 +60,14 @@ public class DiagramsView extends View {
         float a = 0;//угол
         Paint p = new Paint();
         p.setStrokeWidth(5);
-        // координаты середины экрана
-
+    
         //5 случайных сектаров
         for (int i =0 ; i < 5 ; i++)
         {
             p.setColor(Color.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
             float sweep = r.nextFloat() * 70;
-
             SectorView s = new SectorView(getWidth()/2, getHeight()/2, a, sweep, Radius);
             a += sweep;
-
             s.draw(canvas , p);
 
         }
