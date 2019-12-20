@@ -46,12 +46,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
     }
 
-    public void setData(){
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, );
-        listView.setAdapter(adapter);
 
-    }
 
 
     public void onClick(View v) {
@@ -127,13 +122,23 @@ public class MainActivity extends AppCompatActivity {
                     urlConnection.disconnect();
                     Log.d("mylog", "finish " + token);
 
-                    //выводим лист 
-                    setData();
+
+                   
+
+                    //выводим лист
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cards.datacards);
+                    listView.setAdapter(adapter);
+                    
+                   // setData();
                 }
                 else
                 {
                     Log.d("mylog", "net otveta");
                 }
+
+
+
+
 
                 return String.valueOf(token);
 
@@ -146,15 +151,24 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
+       /* public void setData(){
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                    android.R.layout.simple_list_item_1, cards.datacards);
+            listView.setAdapter(adapter);
+
+        }*/
         @Override
         protected String doInBackground(String... params)
         {
             return String.valueOf(getData());
         }
 
+
+
+
     }
 
 
 }
-
 
