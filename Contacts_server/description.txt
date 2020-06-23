@@ -1,0 +1,19 @@
+Сервер позволяет хранить контакты в базе данных и работать с ними.
+
+Поля таблицы contacts: id, first_name, second_name, phone
+
+1. Добавление нового контакта
+http://localhost/contacts/?action=add&first_name=Иван&second_name=Иванов&phone=89042248765
+{"answer": "ok"}
+
+2. Обновление контакта
+http://localhost/contacts/?action=update&id=4&first_name=Петр&second_name=Иванов)&phone=89541232145
+{"answer": "ok"}
+
+3. Выборка контакта
+http://localhost/contacts/?action=getcontact&id=4
+{"answer":"ok", "data":["id":"4", "first_name":"Дима", "second_name":"Самойлов", "phone":"89879827512"]}
+
+4. Удаление контакта из таблицы
+http://localhost/contacts/?action=delete&id=5
+{"answer": "ok"}
