@@ -10,7 +10,7 @@ http://localhost/contacts/?action=add&first_name=Иван&second_name=Ивано
 http://localhost/contacts/?action=update&id=4&first_name=Петр&second_name=Иванов)&phone=89541232145
 {"answer": "ok"}
 
-3. Выборка контакта
+3. Выборка контакта. Удобнее выбирать по id, имени, фамилии 
 http://localhost/contacts/?action=getcontact&id=4
 {"answer":"ok", "data":["id":"4", "first_name":"Дима", "second_name":"Самойлов", "phone":"89879827512"]}
 
