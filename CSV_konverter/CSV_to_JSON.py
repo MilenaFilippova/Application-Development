@@ -18,6 +18,7 @@ for row in reader:
     for name in fieldnames:
         record[name] = row[name]
     record['Installs'] = record['Installs'][:-1]
+    record['Installs'] = str(record['Installs']).replace(',', '')
     record['Android Ver'] = str(record['Android Ver']).split()[0]
     record['Price'] = True if record['Type'] == "Free" else False
     record['Genres'] = "[" + ", ".join(record['Genres'].split(";")) + "]"
